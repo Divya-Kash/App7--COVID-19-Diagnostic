@@ -6,8 +6,8 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
-Author 1
-Author 2
+Divya Kashyap
+Dr. Riedel
  
 Further Information:
 http://diystream.cns.utexas.edu/
@@ -17,15 +17,209 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+The goal of this code is to program essentially a survey to determine whether the user has strep or a cold.
+Since the cold and strep are similar and it can be difficult to discern which you have sometimes, this program
+goes through a series of symptoms in order to help the user better understand what their illness could be.
  
 Known Issues:
-blah, blah, blah, blah
+This list is not exhaustive and should not be used to diagnose any kind of medical condition.
 -->
 
-   <head> 
-      
-	   PUT YOUR OLD CODE IN HERE
-	   
-   </body>
+<!-- Divya Kashyap DK27468 2/13/2020 -->
+  
+<!-- This code sets up the web app -->
+ <head> 
+ <title>Hello World</title> <!-- HEADER -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <link rel="stylesheet" href="w3.css">
+ <link rel="stylesheet" href="w3-colors-flat.css">
+<!-- </head> 
+variables: strep_count and cold_count store numbers and increase by 
+1 every time the respective strepAdd() or coldAdd() functions are called.
+The #label tells the link to go to the labelled page (here it's a number)
+class="w3-btn w3-black" makes a black (w3-black) button (w3-btn)
+-->
+
+<script>
+ var strep_count = 0; //created a variable to save the number of times the user has a strep symptom
+ var cold_count = 0; //created a variable to save the number of times the user has a cold symptom
+  var strepPercent = 0; //created a variable for calculating the percentage for strep
+  var coldPercent = 0; //created a variable for calculating the percentage for cold
+ 
+ function strepAdd(){ //strep function that increments the cold variable by 1
+ strep_count = strep_count + 1;
+ }
+
+ function coldAdd(){ //cold function that increments the cold variable by 1
+ cold_count = cold_count + 1;
+ }
+  
+ function resultPercentage() { //created a results function
+ var resultText = document.getElementById("results");
+    strepPercent = strep_count/(strep_count + cold_count)*100; //calculation of the percentage of strep symptoms
+    coldPercent = cold_count/(strep_count + cold_count)*100; //calculation of the percentage of cold symptoms
+    //code for concatenation of the words + variables
+    resultText.innerHTML = "Probability it's strep =" + strepPercent + "%" + "<br> Probability it is a cold =" + coldPercent + "%";
+ }
+
+</script>
+
+</head>   
+   
+<!-- i think all this JavaScript code is setting up the layout of the webapp -->  
+<style> 
+.body {
+ margin: 0em;
+}
+
+.page {
+ width: 100vw;
+ height: 100vh;
+ position: fixed;
+ top: 0;
+ left: -100vw;
+ overflow-y: auto;
+ z-index: 0;
+ background-color: hsl(0,0%,100%);
+}
+
+ .page:target {
+ left: 0vw;
+ z-index: 1;
+}
+</style>
+
+<!-- This code sets up the first default page of the webapp -->
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+  <h1>Cold or Strep?</h1> <!-- header -->
+</div>
+  
+<div id="content" class="w3-container">
+  <!-- This code adds a print statement at the top of the page -->
+  <p>Are you feeling like you might have strep but wonder if it is a cold? Answer a few short questions to find out!</p>
+  
+  <!-- This code creates a round grey button that takes the user to the next page when clicked-->
+  <a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+  
+  <!-- This code creates a black button that takes the user to the second page when clicked -->
+  <a href="#two" class="w3-btn w3-black"> Go to Page Two </a>
+
+  <!-- this prints another statement -->
+  <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at    Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code      does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+  
+  <!-- this prints another statement -->
+  <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+  
+
+<div class="page" id="one"> <!-- This code creates the next page -->
+  <div id="header" class="w3-container w3-flat-carrot"> 
+    <h1>Question 1</h1> <!-- This code titles this page "Question 1" -->
+  </div>
+  
+   <div id="content" class="w3-container">
+    <p>Do you have a cough?</p> <!-- This code prints the first question --> 
+    <!-- creates a green button that when pressed takes you to the next page and adds 1 to the strep variable
+      by calling the strepAdd() function-->
+    <a href="#two" onclick="strepAdd();" class="w3-btn w3-green">No</a> 
+  <!-- creates a blue button that when pressed takes you to the next page and adds 1 to the strep variable 
+      by calling the coldAdd() function-->
+    <a href="#two" onclick="coldAdd();" class="w3-btn w3-blue">Yes</a>
+   </div>
+
+</div>
+
+<div class="page" id="two"> <!-- This code creates the next page -->
+  <div class="w3-container w3-flat-carrot">
+    <h1>Question 2</h1> <!-- This code titles this page "Question 2" -->
+  </div>
+  
+  <div id="content" class="w3-container">
+    <p>Do you have nasal congestion?</p> <!-- This code prints the second question -->
+    <!-- creates a red button that when pressed takes you to the next page and adds 1 to the strep variable 
+      by calling the coldAdd() function-->
+    <a href="#three" onclick="coldAdd();" class="w3-btn w3-red">Yes</a>
+    <!-- creates a yellow button that when pressed takes you to the next page and adds 1 to the strep variable
+      by calling the strepAdd() function-->
+  <a href="#three" onclick="strepAdd();" class="w3-btn w3-yellow">No</a>
+  </div>
+
+</div>  
+  
+
+<div class="page" id="three"> <!-- This code creates the next page -->
+  <div class="w3-container w3-flat-carrot">
+    <h1>Question 3</h1> <!-- This code titles this page "Question 3" -->
+  </div>
+  
+  <div id="content" class="w3-container">
+    <p>Do you have a lack of appetite?</p> <!-- This code prints the third question -->
+    <!-- creates a purple button that when pressed takes you to the next page and adds 1 to the strep variable 
+      by calling the coldAdd() function-->
+    <a href="#four" onclick="coldAdd();" class="w3-btn w3-purple">No</a>
+    <!-- creates a teal button that when pressed takes you to the next page and adds 1 to the strep variable
+      by calling the strepAdd() function-->
+  <a href="#four" onclick="strepAdd();" class="w3-btn w3-teal">Yes</a>
+  </div>
+
+</div>  
+  
+<div class="page" id="four"> <!-- This code creates the next page -->
+  <div id="header" class="w3-container w3-flat-carrot">
+    <h1>Question 4</h1> <!-- This code titles this page "Question 4" -->
+  </div>
+  
+   <div id="content" class="w3-container">
+    <p>Do you have pain when swallowing?</p> <!-- This code prints the fourth question -->
+    <!-- creates a aqua button that when pressed takes you to the next page and adds 1 to the strep variable 
+      by calling the strepAdd() function-->
+    <a href="#five" onclick="strepAdd();" class="w3-btn w3-aqua">Yes</a>
+    <!-- creates a black button that when pressed takes you to the next page and adds 1 to the cold variable 
+      by calling the coldAdd() function-->
+  <a href="#five" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+   </div>
+
+</div>
+  
+<div class="page" id="five"> <!-- This code creates the next page -->
+  <div id="header" class="w3-container w3-flat-carrot">
+    <h1>Question 5</h1> <!-- This code titles this page "Question 5" -->
+  </div>
+  
+   <div id="content" class="w3-container">
+    <p>Are you coughing?</p> <!-- This code prints the fifth question -->
+    <!-- creates an indigo button that when pressed takes you to the next page and adds 1 to the strep variable 
+      by calling the coldAdd() function-->
+    <a href="#six" onclick="coldAdd();" class="w3-btn w3-indigo"> Yes</a>
+    <!-- creates a khaki button that when pressed takes you to the next page and adds 1 to the strep variable 
+      by calling the strepAdd() function-->
+  <a href="#six" onclick="strepAdd();" class="w3-btn w3-khaki">No</a>
+   </div>
+
+</div>
+  
+<div class="page" id="six"> <!-- This code creates the next page -->
+  <div id="header" class="w3-container w3-flat-carrot">
+    <h1>Results Processing...</h1> <!-- This code titles this page "Results Processing..." -->
+  </div>
+  
+ <div id="content" class="w3-container">
+    <!-- making a teal results button that calls to the results function when clicked -->
+  <a href="#seven" onclick="resultPercentage();" class="w3-btn w3-teal">View Results</a>
+ </div>
+</div>
+  
+<div class="page" id="seven">
+  <div id="header" class="w3-container w3-flat-carrot">
+    <h1>Results!</h1> <!-- i changed the header for this page to say "Results!" -->
+    <p id="results"></p>
+  </div>
+</div>
+
+<footer class="w3-bottom w3-container w3-flat-carrot">
+  <p>DIY!</p>
+</footer>
+
+</body>
 </html>
