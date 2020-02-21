@@ -44,15 +44,21 @@ class="w3-btn w3-black" makes a black (w3-black) button (w3-btn)
 <script>
  var strep_count = 0; //created a variable to save the number of times the user has a strep symptom
  var cold_count = 0; //created a variable to save the number of times the user has a cold symptom
-  var strepPercent = 0; //created a variable for calculating the percentage for strep
-  var coldPercent = 0; //created a variable for calculating the percentage for cold
+ var strepPercent = 0; //created a variable for calculating the percentage for strep
+ var coldPercent = 0; //created a variable for calculating the percentage for cold
+ 
+ //this code checks if i'm looking at the latest version of the program 
+ var docMod = document.lastModified; //when it was last modified
+ alert("This file last modified  " + docMod); //alert to notify me
+ console.log("This file last modified  " + docMod); //message in the alert
+
  
  function strepAdd(){ //strep function that increments the cold variable by 1
- strep_count = strep_count + 1;
+    strep_count = strep_count + 1;
  }
 
  function coldAdd(){ //cold function that increments the cold variable by 1
- cold_count = cold_count + 1;
+    cold_count = cold_count + 1;
  }
   
  function resultPercentage() { //created a results function
@@ -69,25 +75,31 @@ class="w3-btn w3-black" makes a black (w3-black) button (w3-btn)
    
 <!-- i think all this JavaScript code is setting up the layout of the webapp -->  
 <style> 
-.body {
+ .body {
  margin: 0em;
 }
 
 .page {
- width: 100vw;
- height: 100vh;
- position: fixed;
- top: 0;
- left: -100vw;
- overflow-y: auto;
- z-index: 0;
- background-color: hsl(0,0%,100%);
+   width: 100vw;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   left: -100vw;
+   overflow-y: auto;
+   z-index: 0;
+   background-color: hsl(0,0%,100%);
 }
 
- .page:target {
- left: 0vw;
- z-index: 1;
+.page:target {
+   left: 0vw;
+   z-index: 1;
 }
+ 
+ /*  */
+ img, object{
+    max-height:90%;
+    max-width:90%;
+ }
 </style>
 
 <!-- This code sets up the first default page of the webapp -->
@@ -95,7 +107,10 @@ class="w3-btn w3-black" makes a black (w3-black) button (w3-btn)
 <div id="header" class="w3-container w3-flat-carrot">
   <h1>Cold or Strep?</h1> <!-- header -->
 </div>
-  
+ 
+<!-- This is supposed to be the image -->
+<img src="img_girl.jpg" alt="Girl in a jacket" style="width:128px;height:128px;">
+ 
 <div id="content" class="w3-container">
   <!-- This code adds a print statement at the top of the page -->
   <p>Are you feeling like you might have strep but wonder if it is a cold? Answer a few short questions to find out!</p>
