@@ -184,33 +184,16 @@ class="w3-btn w3-black" makes a black (w3-black) button (w3-btn)
   
 <div class="page" id="five"> <!-- This code creates the next page -->
   <div id="header" class="w3-container w3-flat-carrot">
-    <h1>Question 5</h1> <!-- This code titles this page "Question 5" -->
-  </div>
-  
-   <div id="content" class="w3-container">
-    <p>Are you coughing?</p> <!-- This code prints the fifth question -->
-    <!-- creates an indigo button that when pressed takes you to the next page and adds 1 to the strep variable 
-      by calling the coldAdd() function-->
-    <a href="#six" onclick="coldAdd();" class="w3-btn w3-indigo"> Yes</a>
-    <!-- creates a khaki button that when pressed takes you to the next page and adds 1 to the strep variable 
-      by calling the strepAdd() function-->
-  <a href="#six" onclick="strepAdd();" class="w3-btn w3-khaki">No</a>
-   </div>
-
-</div>
-  
-<div class="page" id="six"> <!-- This code creates the next page -->
-  <div id="header" class="w3-container w3-flat-carrot">
     <h1>Results Processing...</h1> <!-- This code titles this page "Results Processing..." -->
   </div>
   
  <div id="content" class="w3-container">
     <!-- making a teal results button that calls to the results function when clicked -->
-  <a href="#seven" onclick="resultPercentage();" class="w3-btn w3-teal">View Results</a>
+  <a href="#six" onclick="resultPercentage();" class="w3-btn w3-teal">View Results</a>
  </div>
 </div>
   
-<div class="page" id="seven">
+<div class="page" id="six">
   <div id="header" class="w3-container w3-flat-carrot">
     <h1>Results!</h1> <!-- i changed the header for this page to say "Results!" -->
     <p id="results"></p>
