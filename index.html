@@ -21,7 +21,7 @@ The goal of this code is to try and identify whether a user has COVID-19, a cold
 based on a series of questions based on a person's symptoms.
  
 Known Issues:
-This list is not exhaustive and should not be used to diagnose any kind of medical condition.
+This list is not exhaustive and should not be used to diagnose any kind of medical condition. Also my results don't work.
 -->
 
 <!-- Divya Kashyap DK27468 4/10/2020 -->
@@ -242,7 +242,7 @@ img, object{
     <p id="results"></p>
     
    <center> <!-- this code centers the image -->
-    <!-- this code acquires the image from the internet and names it flu throat vs healthy throat -->
+    <!-- this code acquires the image from the internet and names it coronavirus -->
     <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZwFHB4rLpP9Ma1qt6yT4DQnmA2tz43Wwj6nECUiOLz-jkQWqK&usqp=CAU"
         alt="coronavirus">
    </center>
@@ -251,16 +251,18 @@ img, object{
   </div>
  
   <div id="content" class="w3-container">
+    <!-- this prints the intended purpose of my table and results display -->
     <p>I wanted to display my results on the second row of this table but I'm unsure how to do that. I wanted to add the percentage data so that it's easier to see the percent chance that the user has a particular illness. The illness with the highest percentage is most likely what they have.</p>
   
+   <!-- creating the table -->
     <head>
      <style>
-     table {
+     table { 
        font-family: arial, sans-serif;
        border-collapse: collapse;
        width: 100%;
      }
-
+     
      td, th {
        border: 1px solid #dddddd;
        text-align: left;
@@ -273,17 +275,17 @@ img, object{
      </style>
      </head>
      <body>
-
+     <!-- table title -->
      <h2>Symptom Table</h2>
-
+     <!-- this code adds the table contents -->
      <table>
-       <tr>
+       <tr> <!-- first row -->
          <th>Seasonal Allergies</th>
          <th>Cold</th>
          <th>Flu</th>
          <th>COVID-19</th>
        </tr>
-       <tr>
+       <tr> <!-- second row with code that doesn't function the way I want -->
          <td>"resultPercentage().allergyPercent"</td>
          <td>"resultPercentage().coldPercent"</td>
          <td>"resultPercentage().fluPercent"</td>
@@ -298,7 +300,7 @@ img, object{
   </div>
  
 </div>
-
+<!-- footer -->
 <footer class="w3-bottom w3-container w3-flat-carrot">
   <p>DIY!</p>
 </footer>
