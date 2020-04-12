@@ -182,19 +182,19 @@ tr:nth-child(even) {
  </div>
   
    <div id="content" class="w3-container">
-      <p>Do you have a cough?</p> <!-- This code prints the first question --> 
-      <!-- creates a green button that when pressed takes you to the next page and adds 1 to the flu variable
-        by calling the fluAdd() function-->
-      <a href="#two" onclick="fluAdd();" class="w3-btn w3-green">No</a>
+      <p>Do you have diarrhea?</p> <!-- This code prints the first question --> 
+      <!-- creates a green button that when pressed takes you to the next page and adds 1 to the cold variable
+        by calling the coldAdd() function-->
+      <a href="#two" onclick="coldAdd();" onclick ="allergiesAdd();" class="w3-btn w3-green">No</a>
       <!-- creates a green button that when pressed takes you to the next page and adds 1 to the allergies variable
-        by calling the allergiesAdd() function-->
-      <a href="#two" onclick="allergiesAdd();" class="w3-btn w3-green">No</a>
-      <!-- creates a blue button that when pressed takes you to the next page and adds 1 to the cold variable 
-      by calling the coldAdd() function-->
-      <a href="#two" onclick="coldAdd();" class="w3-btn w3-blue">Yes</a>
+        by calling the allergiesAdd() function
+      <a href="#two" onclick="allergiesAdd();" class="w3-btn w3-green">No</a> -->
+      <!-- creates a blue button that when pressed takes you to the next page and adds 1 to the flu variable 
+      by calling the fluAdd() function-->
+      <a href="#two" onclick="fluAdd();" onclick="covidAdd();" class="w3-btn w3-blue">Yes</a>
       <!-- creates a blue button that when pressed takes you to the next page and adds 1 to the covid variable 
-      by calling the covidAdd() function-->
-      <a href="#two" onclick="covidAdd();" class="w3-btn w3-blue">Yes</a>
+      by calling the covidAdd() function
+      <a href="#two" onclick="covidAdd();" class="w3-btn w3-blue">Yes</a> -->
    </div>
 
 </div>
@@ -208,16 +208,16 @@ tr:nth-child(even) {
     <p>Do you have a fever?</p> <!-- This code prints the second question -->
     <!-- creates a red button that when pressed takes you to the next page and adds 1 to the flu variable 
       by calling the coldAdd() function-->
-    <a href="#three" onclick="coldAdd();" class="w3-btn w3-red">No</a>
+    <a href="#three" onclick="coldAdd();" onclick="allergiesAdd();" class="w3-btn w3-red">No</a>
    <!-- creates a red button that when pressed takes you to the next page and adds 1 to the allergies variable 
-      by calling the allergiesAdd() function-->
-    <a href="#three" onclick="allergiesAdd();" class="w3-btn w3-red">No</a>
+      by calling the allergiesAdd() function
+    <a href="#three" onclick="allergiesAdd();" class="w3-btn w3-red">No</a> -->
     <!-- creates a yellow button that when pressed takes you to the next page and adds 1 to the flu variable
       by calling the fluAdd() function-->
-  <a href="#three" onclick="fluAdd();" class="w3-btn w3-yellow">Yes</a>
+  <a href="#three" onclick="fluAdd();" onclick="covidAdd();" class="w3-btn w3-yellow">Yes</a>
    <!-- creates a yellow button that when pressed takes you to the next page and adds 1 to the covid variable
-      by calling the covidAdd() function-->
-  <a href="#three" onclick="covidAdd();" class="w3-btn w3-yellow">Yes</a>
+      by calling the covidAdd() function
+  <a href="#three" onclick="covidAdd();" class="w3-btn w3-yellow">Yes</a> -->
   </div>
 
 </div>  
@@ -232,13 +232,13 @@ tr:nth-child(even) {
     <p>Do you have shortness of breath?</p> <!-- This code prints the third question -->
     <!-- creates a purple button that when pressed takes you to the next page and adds 1 to the flu variable 
       by calling the coldAdd() function-->
-    <a href="#four" onclick="coldAdd();" class="w3-btn w3-purple">No</a>
+    <a href="#four" onclick="coldAdd();" onclick="fluAdd();" onclick="allergiesAdd();" class="w3-btn w3-purple">No</a>
     <!-- creates a purple button that when pressed takes you to the next page and adds 1 to the flu variable 
-      by calling the coldAdd() function-->
-    <a href="#four" onclick="fluAdd();" class="w3-btn w3-purple">No</a>
+      by calling the coldAdd() function
+    <a href="#four" onclick="fluAdd();" class="w3-btn w3-purple">No</a> -->
     <!-- creates a purple button that when pressed takes you to the next page and adds 1 to the flu variable 
-      by calling the coldAdd() function-->
-    <a href="#four" onclick="allergiesAdd();" class="w3-btn w3-purple">No</a>
+      by calling the coldAdd() function
+    <a href="#four" onclick="allergiesAdd();" class="w3-btn w3-purple">No</a> -->
     <!-- creates a teal button that when pressed takes you to the next page and adds 1 to the flu variable
       by calling the fluAdd() function-->
   <a href="#four" onclick="covidAdd();" class="w3-btn w3-teal">Yes</a>
@@ -255,16 +255,16 @@ tr:nth-child(even) {
     <p>Have you been sneezing?</p> <!-- This code prints the fourth question -->
     <!-- creates a aqua button that when pressed takes you to the next page and adds 1 to the cold variable 
       by calling the coldAdd() function-->
-    <a href="#five" onclick="coldAdd();" class="w3-btn w3-aqua">Yes</a>
+    <a href="#five" onclick="coldAdd();" onclick="allegiesAdd();" class="w3-btn w3-aqua">Yes</a>
     <!-- creates a aqua button that when pressed takes you to the next page and adds 1 to the allergies variable 
-      by calling the allergiesAdd() function-->
-    <a href="#five" onclick="allegiesAdd();" class="w3-btn w3-aqua">Yes</a>
+      by calling the allergiesAdd() function
+    <a href="#five" onclick="allegiesAdd();" class="w3-btn w3-aqua">Yes</a> -->
     <!-- creates a black button that when pressed takes you to the next page and adds 1 to the covid variable 
       by calling the covidAdd() function-->
-    <a href="#five" onclick="covidAdd();" class="w3-btn w3-black">No</a>
+    <a href="#five" onclick="covidAdd();" onclick="fluAdd();" class="w3-btn w3-black">No</a>
     <!-- creates a black button that when pressed takes you to the next page and adds 1 to the flu variable 
-      by calling the fluAdd() function-->
-    <a href="#five" onclick="fluAdd();" class="w3-btn w3-black">No</a>
+      by calling the fluAdd() function
+    <a href="#five" onclick="fluAdd();" class="w3-btn w3-black">No</a> -->
    </div>
 
 </div>
